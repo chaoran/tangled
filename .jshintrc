@@ -10,7 +10,6 @@
   "singleGroups": true,
   "futurehostile": true,
   "freeze": true,
-  "forin": true,
   "eqeqeq": true,
   "noarg": true,
   "nonew": true,
