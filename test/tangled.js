@@ -15,6 +15,30 @@ describe('Tangled', function() {
     it('should be a function', function() {
       expect(tangle).to.be.a('function');
     });
+
+    describe('when object has circular dependence', function() {
+      beforeEach(function() {
+        obj = { hello: 'world' };
+        obj.self = obj;
+        tgl = tangle(obj);
+      });
+
+      it('should return the same tangled for the same object', function() {
+        expect(tgl.self).to.equal(tgl);
+      });
+    });
+
+    describe('when object is updated and retangled', function() {
+      beforeEach(function() {
+        obj.x = { y: 2 };
+        tgl = tangle(obj);
+      });
+
+      it('should return a tangled for the updated property', function() {
+        expect(tgl.x).to.deep.equal(obj.x);
+        expect(tgl.x).to.not.equal(obj.x);
+      });
+    });
   });
 
   describe('trap:get', function() {
