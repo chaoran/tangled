@@ -1,0 +1,19 @@
+{
+  "esversion": 6,
+  "expr": true,
+  "node": true,
+  "mocha": true,
+  "strict": "implied",
+  "undef": true,
+  "unused": true,
+  "varstmt": true,
+  "singleGroups": true,
+  "futurehostile": true,
+  "freeze": true,
+  "forin": true,
+  "eqeqeq": true,
+  "noarg": true,
+  "nonew": true,
+  "nonbsp": true,
+  "nocomma": true
+}
